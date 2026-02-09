@@ -215,6 +215,29 @@ body {
   font-weight: 600;
 }
 
+/* Cancel Anytime Text */
+.cta-cancel-text {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 10px;
+  color: #ffffff;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  margin-top: 0;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+.cta-cancel-text.show {
+  max-height: 40px;
+  opacity: 1;
+  margin-top: 16px;
+}
+
 @media (max-width: 520px) {
   .cta-main-btn {
     font-size: 12px;
@@ -497,6 +520,7 @@ audio::-webkit-media-controls-time-remaining-display {
         <span class="cta-option-desc">Been reading Korean for 3–6 months</span>
       </a>
     </div>
+    <p class="cta-cancel-text" id="ctaCancelText">Cancel anytime</p>
   </div>
   
   <!-- Testimonials Container -->
@@ -1070,8 +1094,10 @@ audio::-webkit-media-controls-time-remaining-display {
 function toggleTrialOptions() {
   const options = document.getElementById('ctaOptions');
   const btn = document.getElementById('ctaMainBtn');
+  const cancel = document.getElementById('ctaCancelText');
   options.classList.toggle('show');
   btn.classList.toggle('active');
+  cancel.classList.toggle('show');
 }
 
 // Add playing class when audio is playing
