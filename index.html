@@ -59,7 +59,7 @@ body {
   font-size: 24px;
   color: white;
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   text-shadow:
     -2px -2px 0 #000,
     2px -2px 0 #000,
@@ -78,6 +78,166 @@ body {
     line-height: 1.6;
   }
 }
+
+/* ====== CTA SECTION ====== */
+.cta-section {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.cta-main-btn {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 16px;
+  color: #fff;
+  background: linear-gradient(180deg, #ff4455 0%, #cc1133 50%, #aa0022 100%);
+  border: 3px solid #ff6677;
+  border-radius: 14px;
+  padding: 18px 36px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow:
+    0 6px 0 #880015,
+    0 8px 20px rgba(0, 0, 0, 0.4),
+    0 0 25px rgba(255, 68, 85, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+  position: relative;
+  top: 0;
+  line-height: 1.5;
+}
+
+.cta-main-btn:hover {
+  background: linear-gradient(180deg, #ff5566 0%, #dd2244 50%, #bb1133 100%);
+  box-shadow:
+    0 6px 0 #880015,
+    0 8px 20px rgba(0, 0, 0, 0.4),
+    0 0 40px rgba(255, 68, 85, 0.6),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  transform: scale(1.03);
+}
+
+.cta-main-btn:active {
+  top: 4px;
+  box-shadow:
+    0 2px 0 #880015,
+    0 4px 10px rgba(0, 0, 0, 0.4),
+    0 0 20px rgba(255, 68, 85, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.cta-main-btn.active {
+  background: linear-gradient(180deg, #dd3344 0%, #aa1122 50%, #880011 100%);
+  border-color: #ff8899;
+  box-shadow:
+    0 6px 0 #660011,
+    0 8px 20px rgba(0, 0, 0, 0.4),
+    0 0 30px rgba(255, 68, 85, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+/* Options Container */
+.cta-options {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 0;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cta-options.show {
+  max-height: 200px;
+  opacity: 1;
+  margin-top: 18px;
+}
+
+.cta-option-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 16px 22px;
+  border-radius: 12px;
+  text-decoration: none;
+  border: 2px solid;
+  transition: all 0.25s ease;
+  min-width: 200px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.cta-option-btn.novice {
+  background: linear-gradient(135deg, #1a1a3e 0%, #2a2a5e 100%);
+  border-color: #41c0ff;
+}
+
+.cta-option-btn.novice:hover {
+  border-color: #6dd4ff;
+  box-shadow: 0 4px 25px rgba(65, 192, 255, 0.4);
+  transform: translateY(-3px);
+}
+
+.cta-option-btn.beginner {
+  background: linear-gradient(135deg, #1a3e1a 0%, #2a5e2a 100%);
+  border-color: #44dd66;
+}
+
+.cta-option-btn.beginner:hover {
+  border-color: #66ff88;
+  box-shadow: 0 4px 25px rgba(68, 221, 102, 0.4);
+  transform: translateY(-3px);
+}
+
+.cta-option-emoji {
+  font-size: 26px;
+}
+
+.cta-option-title {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 11px;
+  color: #fff;
+  text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+.cta-option-desc {
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 12px;
+  color: #ccc;
+  font-weight: 600;
+}
+
+@media (max-width: 520px) {
+  .cta-main-btn {
+    font-size: 12px;
+    padding: 14px 20px;
+  }
+  
+  .cta-options {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .cta-options.show {
+    max-height: 350px;
+  }
+  
+  .cta-option-btn {
+    min-width: 260px;
+    width: 90%;
+  }
+}
+
+/* ====== END CTA SECTION ====== */
 
 /* Testimonials Container */
 .testimonials-container {
@@ -319,6 +479,25 @@ audio::-webkit-media-controls-time-remaining-display {
   
   <!-- Page Title -->
   <h1 class="page-title">🎧 Audio Testimonials 🎧</h1>
+  
+  <!-- Free Trial CTA -->
+  <div class="cta-section">
+    <button class="cta-main-btn" id="ctaMainBtn" onclick="toggleTrialOptions()">
+      🎮 Get Your 2 Week Free Trial 🎮
+    </button>
+    <div class="cta-options" id="ctaOptions">
+      <a href="https://koreanlearnin.com/products/korean-k-drama-phrase-class-6-week-intensive-copy?selling_plan=9652011298&variant=50734607040802" target="_blank" class="cta-option-btn novice">
+        <span class="cta-option-emoji">📖</span>
+        <span class="cta-option-title">Novice</span>
+        <span class="cta-option-desc">Reading Korean 3–6 months</span>
+      </a>
+      <a href="https://koreanlearnin.com/products/2-week-free-trial?selling_plan=9652011298&variant=50734616346914" target="_blank" class="cta-option-btn beginner">
+        <span class="cta-option-emoji">🌱</span>
+        <span class="cta-option-title">Absolute Beginner</span>
+        <span class="cta-option-desc">Reading Korean &lt;3 months</span>
+      </a>
+    </div>
+  </div>
   
   <!-- Testimonials Container -->
   <div class="testimonials-container">
@@ -887,6 +1066,14 @@ audio::-webkit-media-controls-time-remaining-display {
 </div>
 
 <script>
+// Toggle trial options
+function toggleTrialOptions() {
+  const options = document.getElementById('ctaOptions');
+  const btn = document.getElementById('ctaMainBtn');
+  options.classList.toggle('show');
+  btn.classList.toggle('active');
+}
+
 // Add playing class when audio is playing
 document.querySelectorAll('audio').forEach(audio => {
   const card = audio.closest('.testimonial-card');
