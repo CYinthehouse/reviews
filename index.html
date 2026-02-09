@@ -79,6 +79,32 @@ body {
   }
 }
 
+/* ====== LOOM VIDEO ====== */
+.loom-video-container {
+  max-width: 640px;
+  margin: 0 auto 24px auto;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+  border: 3px solid #41c0ff;
+}
+
+.loom-video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  height: 0;
+  overflow: hidden;
+}
+
+.loom-video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
 /* ====== CTA SECTION ====== */
 .cta-section {
   text-align: center;
@@ -139,6 +165,43 @@ body {
     inset 0 1px 0 rgba(255, 255, 255, 0.15);
 }
 
+/* Level Prompt */
+.cta-level-prompt {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cta-level-prompt.show {
+  max-height: 120px;
+  opacity: 1;
+  margin-top: 20px;
+  margin-bottom: 6px;
+}
+
+.cta-level-title {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 12px;
+  color: #ffd700;
+  text-align: center;
+  line-height: 1.6;
+  text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000,
+    0 0 15px rgba(255, 215, 0, 0.4);
+}
+
+.cta-level-subtitle {
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 13px;
+  color: #e0e0e0;
+  text-align: center;
+  margin-top: 8px;
+}
+
 /* Options Container */
 .cta-options {
   display: flex;
@@ -154,7 +217,7 @@ body {
 .cta-options.show {
   max-height: 200px;
   opacity: 1;
-  margin-top: 18px;
+  margin-top: 14px;
 }
 
 .cta-option-btn {
@@ -257,6 +320,10 @@ body {
   .cta-option-btn {
     min-width: 260px;
     width: 90%;
+  }
+  
+  .cta-level-title {
+    font-size: 10px;
   }
 }
 
@@ -503,11 +570,22 @@ audio::-webkit-media-controls-time-remaining-display {
   <!-- Page Title -->
   <h1 class="page-title">🎧 Audio Testimonials 🎧</h1>
   
+  <!-- Loom Video -->
+  <div class="loom-video-container">
+    <div class="loom-video-wrapper">
+      <iframe src="https://www.loom.com/embed/80c58a33fbae4f94886c37cae60e1fad" allowfullscreen></iframe>
+    </div>
+  </div>
+  
   <!-- Free Trial CTA -->
   <div class="cta-section">
     <button class="cta-main-btn" id="ctaMainBtn" onclick="toggleTrialOptions()">
       🎮 Get Your 2 Week Free Trial 🎮
     </button>
+    <div class="cta-level-prompt" id="ctaLevelPrompt">
+      <p class="cta-level-title">How long have you been reading Korean?</p>
+      <p class="cta-level-subtitle">If you do not know the alphabet, please click Absolute Beginner.</p>
+    </div>
     <div class="cta-options" id="ctaOptions">
               <a href="https://koreanlearnin.com/products/2-week-free-trial?selling_plan=9652011298&variant=50734616346914" target="_blank" class="cta-option-btn beginner">
         <span class="cta-option-emoji">🌱</span>
@@ -1095,9 +1173,11 @@ function toggleTrialOptions() {
   const options = document.getElementById('ctaOptions');
   const btn = document.getElementById('ctaMainBtn');
   const cancel = document.getElementById('ctaCancelText');
+  const prompt = document.getElementById('ctaLevelPrompt');
   options.classList.toggle('show');
   btn.classList.toggle('active');
   cancel.classList.toggle('show');
+  prompt.classList.toggle('show');
 }
 
 // Add playing class when audio is playing
