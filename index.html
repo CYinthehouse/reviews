@@ -134,6 +134,8 @@ body {
   position: relative;
   top: 0;
   line-height: 1.5;
+  text-decoration: none;
+  display: inline-block;
 }
 
 .cta-main-btn:hover {
@@ -155,175 +157,10 @@ body {
     inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
-.cta-main-btn.active {
-  background: linear-gradient(180deg, #dd3344 0%, #aa1122 50%, #880011 100%);
-  border-color: #ff8899;
-  box-shadow:
-    0 6px 0 #660011,
-    0 8px 20px rgba(0, 0, 0, 0.4),
-    0 0 30px rgba(255, 68, 85, 0.5),
-    inset 0 1px 0 rgba(255, 255, 255, 0.15);
-}
-
-/* Level Prompt */
-.cta-level-prompt {
-  max-height: 0;
-  overflow: hidden;
-  opacity: 0;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.cta-level-prompt.show {
-  max-height: 120px;
-  opacity: 1;
-  margin-top: 20px;
-  margin-bottom: 6px;
-}
-
-.cta-level-title {
-  font-family: 'Press Start 2P', cursive;
-  font-size: 12px;
-  color: #ffd700;
-  text-align: center;
-  line-height: 1.6;
-  text-shadow:
-    -1px -1px 0 #000,
-    1px -1px 0 #000,
-    -1px 1px 0 #000,
-    1px 1px 0 #000,
-    0 0 15px rgba(255, 215, 0, 0.4);
-}
-
-.cta-level-subtitle {
-  font-family: 'Noto Sans', sans-serif;
-  font-size: 13px;
-  color: #e0e0e0;
-  text-align: center;
-  margin-top: 8px;
-}
-
-/* Options Container */
-.cta-options {
-  display: flex;
-  justify-content: center;
-  gap: 16px;
-  margin-top: 0;
-  max-height: 0;
-  overflow: hidden;
-  opacity: 0;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.cta-options.show {
-  max-height: 200px;
-  opacity: 1;
-  margin-top: 14px;
-}
-
-.cta-option-btn {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 6px;
-  padding: 16px 22px;
-  border-radius: 12px;
-  text-decoration: none;
-  border: 2px solid;
-  transition: all 0.25s ease;
-  min-width: 200px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-}
-
-.cta-option-btn.novice {
-  background: linear-gradient(135deg, #1a1a3e 0%, #2a2a5e 100%);
-  border-color: #41c0ff;
-}
-
-.cta-option-btn.novice:hover {
-  border-color: #6dd4ff;
-  box-shadow: 0 4px 25px rgba(65, 192, 255, 0.4);
-  transform: translateY(-3px);
-}
-
-.cta-option-btn.beginner {
-  background: linear-gradient(135deg, #1a3e1a 0%, #2a5e2a 100%);
-  border-color: #44dd66;
-}
-
-.cta-option-btn.beginner:hover {
-  border-color: #66ff88;
-  box-shadow: 0 4px 25px rgba(68, 221, 102, 0.4);
-  transform: translateY(-3px);
-}
-
-.cta-option-emoji {
-  font-size: 26px;
-}
-
-.cta-option-title {
-  font-family: 'Press Start 2P', cursive;
-  font-size: 11px;
-  color: #fff;
-  text-shadow:
-    -1px -1px 0 #000,
-    1px -1px 0 #000,
-    -1px 1px 0 #000,
-    1px 1px 0 #000;
-}
-
-.cta-option-desc {
-  font-family: 'Noto Sans', sans-serif;
-  font-size: 12px;
-  color: #ccc;
-  font-weight: 600;
-}
-
-/* Cancel Anytime Text */
-.cta-cancel-text {
-  font-family: 'Press Start 2P', cursive;
-  font-size: 10px;
-  color: #ffffff;
-  max-height: 0;
-  overflow: hidden;
-  opacity: 0;
-  margin-top: 0;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  text-shadow:
-    -1px -1px 0 #000,
-    1px -1px 0 #000,
-    -1px 1px 0 #000,
-    1px 1px 0 #000;
-}
-
-.cta-cancel-text.show {
-  max-height: 40px;
-  opacity: 1;
-  margin-top: 16px;
-}
-
 @media (max-width: 520px) {
   .cta-main-btn {
     font-size: 12px;
     padding: 14px 20px;
-  }
-  
-  .cta-options {
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-  }
-
-  .cta-options.show {
-    max-height: 350px;
-  }
-  
-  .cta-option-btn {
-    min-width: 260px;
-    width: 90%;
-  }
-  
-  .cta-level-title {
-    font-size: 10px;
   }
 }
 
@@ -573,32 +410,15 @@ audio::-webkit-media-controls-time-remaining-display {
   <!-- Loom Video -->
   <div class="loom-video-container">
     <div class="loom-video-wrapper">
-      <iframe src="https://www.loom.com/embed/80c58a33fbae4f94886c37cae60e1fad" allowfullscreen></iframe>
+      <iframe src="https://www.loom.com/embed/442c026595e343c5bbcc33fb728616e7" allowfullscreen></iframe>
     </div>
   </div>
   
-  <!-- Free Trial CTA -->
+  <!-- CTA -->
   <div class="cta-section">
-    <button class="cta-main-btn" id="ctaMainBtn" onclick="toggleTrialOptions()">
-      🎮 Get Your 2 Week Free Trial 🎮
-    </button>
-    <div class="cta-level-prompt" id="ctaLevelPrompt">
-      <p class="cta-level-title">How long have you been reading Korean?</p>
-      <p class="cta-level-subtitle">If you do not know the alphabet, please click Absolute Beginner.</p>
-    </div>
-    <div class="cta-options" id="ctaOptions">
-              <a href="https://koreanlearnin.com/products/2-week-free-trial?selling_plan=9652011298&variant=50734616346914" target="_blank" class="cta-option-btn beginner">
-        <span class="cta-option-emoji">🌱</span>
-        <span class="cta-option-title">Absolute Beginner</span>
-        <span class="cta-option-desc">Been reading Korean for 0-3 months</span>
-      </a>
-      <a href="https://koreanlearnin.com/products/korean-k-drama-phrase-class-6-week-intensive-copy?selling_plan=9652011298&variant=50734607040802" target="_blank" class="cta-option-btn novice">
-        <span class="cta-option-emoji">📖</span>
-        <span class="cta-option-title">Novice</span>
-        <span class="cta-option-desc">Been reading Korean for 3–6 months</span>
-      </a>
-    </div>
-    <p class="cta-cancel-text" id="ctaCancelText">Cancel anytime!</p>
+    <a data-eo-form-toggle-id="38dfdc80-0c6d-11f1-a3b2-29d3e9115885" href="#" class="cta-main-btn">
+      🎮 Want to take Korean Class? 🎮
+    </a>
   </div>
   
   <!-- Testimonials Container -->
@@ -1168,18 +988,6 @@ audio::-webkit-media-controls-time-remaining-display {
 </div>
 
 <script>
-// Toggle trial options
-function toggleTrialOptions() {
-  const options = document.getElementById('ctaOptions');
-  const btn = document.getElementById('ctaMainBtn');
-  const cancel = document.getElementById('ctaCancelText');
-  const prompt = document.getElementById('ctaLevelPrompt');
-  options.classList.toggle('show');
-  btn.classList.toggle('active');
-  cancel.classList.toggle('show');
-  prompt.classList.toggle('show');
-}
-
 // Add playing class when audio is playing
 document.querySelectorAll('audio').forEach(audio => {
   const card = audio.closest('.testimonial-card');
@@ -1205,5 +1013,6 @@ document.querySelectorAll('audio').forEach(audio => {
 });
 </script>
 
+<script async src="https://eocampaign1.com/form/38dfdc80-0c6d-11f1-a3b2-29d3e9115885.js" data-form="38dfdc80-0c6d-11f1-a3b2-29d3e9115885"></script>
 </body>
 </html>
